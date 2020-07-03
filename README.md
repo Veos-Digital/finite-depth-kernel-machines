@@ -1,4 +1,4 @@
-# Parametric machines: a fresh approach toarchitecture search - Hypergraph machines
+# Parametric machines: a fresh approach toarchitecture search - Finite-depth kernel machines
 
 This repository is part of the project *Parametric machines: a fresh approach toarchitecture search*.
 
@@ -13,7 +13,7 @@ Add main idea and figures
 The package can be install by cloning the repository, then
 
 ```
-cd hypergraph_machines
+cd kenel_machines
 pip install -e ./
 ```
 
