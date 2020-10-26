@@ -1,8 +1,10 @@
 import torch
 import torch.nn as nn
 
+
 def test_symmetry(a):
-    return torch.allclose(a.transpose(0, 1),a)
+    return torch.allclose(a.transpose(0, 1), a)
+
 
 def radialkernel(u, v):
     uu = torch.pow(u, 2).sum(1, keepdim=True)
@@ -11,8 +13,9 @@ def radialkernel(u, v):
     res = uv - uu/2 - torch.t(vv)/2
     return torch.exp(res)
 
+
 class KernelMachine(nn.Module):
-    def __init__(self, sizes, data, kernel = radialkernel):
+    def __init__(self, sizes, data, kernel=radialkernel):
         super(KernelMachine, self).__init__()
         self.data = data
         self.data.requires_grad = False
@@ -101,6 +104,7 @@ class MLP(nn.Module):
 
         for i, layer in enumerate(self.layers):
             x = layer(x)
-            if hasattr(layer, "weight"): reg += square_params(layer)
+            if hasattr(layer, "weight"):
+                reg += square_params(layer)
 
         return x, reg

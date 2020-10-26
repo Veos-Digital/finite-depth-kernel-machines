@@ -38,12 +38,11 @@ install it on Python {}.{}.
 """.format(*(REQUIRED_PYTHON + CURRENT_PYTHON)))
     sys.exit(1)
 
-requirements = ['torch>=1.1.0',
-                'torchvision>=0.3.0',
-                'numpy==1.15.0',
+requirements = ['torch==1.2.0',
+                'torchvision==0.4.0',
+                'numpy==1.19.2',
                 'matplotlib==2.2.2',
                 'seaborn>=0.9.0',
-                'torchvision>=0.4.2'
                 ]
 EXCLUDE_FROM_PACKAGES = []
 
